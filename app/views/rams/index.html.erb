@@ -1,0 +1,29 @@
+<h1>Listing rams</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Country</th>
+    <th>Like</th>
+    <th>Friend</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rams.each do |ram| %>
+  <tr>
+    <td><%= ram.name %></td>
+    <td><%= ram.country %></td>
+    <td><%= ram.like %></td>
+    <td><%= ram.friend %></td>
+    <td><%= link_to 'Show', ram %></td>
+    <td><%= link_to 'Edit', edit_ram_path(ram) %></td>
+    <td><%= link_to 'Destroy', ram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ram', new_ram_path %>
